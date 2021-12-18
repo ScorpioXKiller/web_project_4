@@ -15,6 +15,13 @@
     text-rendering: optimizeLegibility;
 }
 
+@media screen and (max-width: 880px) {
+    .page{
+        padding-bottom: 6.818vw;
+    }
+    
+}
+
 @media screen and (max-width: 320px) {
     .page{
         padding-bottom: 36px;

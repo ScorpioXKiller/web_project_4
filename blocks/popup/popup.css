@@ -9,7 +9,7 @@
     top: calc((100vh - 330px) / 2);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 540px) {
     .popup{
         width: 282px;
         left: calc((100vw - 282px) / 2);

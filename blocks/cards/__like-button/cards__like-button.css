@@ -8,3 +8,22 @@
 .cards__like-button:hover{
     opacity: 0.5;
 }
+
+@media screen and (max-width: 880px) {
+    .cards__like-button{
+        background-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cards__like-button{
+        background-size: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+    .cards__like-button{
+        width: 21px;
+    }
+}
