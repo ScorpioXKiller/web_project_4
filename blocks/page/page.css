@@ -3,6 +3,7 @@
     font-weight: normal;
     max-width: 100vw;
     min-width: 320px;
+    padding-bottom: 60px;
     color: white;
     background-color: black;
     -moz-osx-font-smoothing: grayscale;
@@ -11,4 +12,10 @@
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+}
+
+@media screen and (max-width: 320px) {
+    .page{
+        padding-bottom: 36px;
+    }   
 }
