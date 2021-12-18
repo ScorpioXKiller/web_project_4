@@ -9,6 +9,8 @@
 </head>
 <body>
     <div class="page">
+        <div class="page__overlay"></div>
+        
         <header class="header">
             <img class="header__logo" src="images/logo.svg" alt="logo">
             <div class="header__line"></div>
@@ -21,12 +23,12 @@
                 <div class="profile__info">
                     <h1 class="profile__name">Jacques Cousteau</h1>
 
-                    <button class="profile__edit-button" title="Edit profile"></button>
+                    <button class="button profile__edit-button" title="Edit profile"></button>
 
                     <p class="profile__about">Explorer</p>
                 </div>
 
-                <button class="profile__add-button" title="Add image"></button>
+                <button class="button profile__add-button" title="Add image"></button>
             </section>
 
             <section class="user-photos">
@@ -37,7 +39,7 @@
                         <div class="cards__content">
                             <h2 class="cards__name">Yosemite Valley</h2>
 
-                            <button class="cards__like-button" title="Like"></button>
+                            <button class="button cards__like-button" title="Like"></button>
                         </div>
                     </li>
 
@@ -47,7 +49,7 @@
                         <div class="cards__content">
                             <h2 class="cards__name">Lake Loise</h2>
 
-                            <button class="cards__like-button" title="Like"></button>
+                            <button class="button cards__like-button" title="Like"></button>
                         </div>
                     </li>
 
@@ -57,7 +59,7 @@
                         <div class="cards__content">
                             <h2 class="cards__name">Blad Mountains</h2>
 
-                            <button class="cards__like-button" title="Like"></button>
+                            <button class="button cards__like-button" title="Like"></button>
                         </div>
                     </li>
                     
@@ -67,7 +69,7 @@
                         <div class="cards__content">
                             <h2 class="cards__name">Latemar</h2>
 
-                            <button class="cards__like-button" title="Like"></button>
+                            <button class="button cards__like-button" title="Like"></button>
                         </div>
                     </li>
 
@@ -77,7 +79,7 @@
                         <div class="cards__content">
                             <p class="cards__name">Vanoise National Park</p>
 
-                            <button class="cards__like-button" title="Like"></button>
+                            <button class="button cards__like-button" title="Like"></button>
                         </div>
                     </li>
 
@@ -87,10 +89,24 @@
                         <div class="cards__content">
                             <h2 class="cards__name">Lago di Braies</h2>
 
-                            <button class="cards__like-button" title="Like"></button>
+                            <button class="button cards__like-button" title="Like"></button>
                         </div>
                     </li>
                 </ul>
+            </section>
+
+            <section class="popup">
+                <button class="button popup__close-button" type="button" title="Close"></button>
+
+                <form class="popup__container" name="editor">
+                    <h2 class="popup__title">Edit profile</h2>
+
+                    <input type="text" class="popup__item popup__item_el_user-name" name="user-name" placeholder="Name">
+
+                    <input type="text" class="popup__item popup__item_el_user-about" name="user-about" placeholder="About Me">
+
+                    <button class="button popup__save-button" type="submit" title="Save">Save</button>
+                </form>
             </section>
         </main>
 

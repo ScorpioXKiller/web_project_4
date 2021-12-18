@@ -1,0 +1,9 @@
+.popup__item_el_user-about{
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width: 320px) {
+    .popup__item_el_user-about{
+        margin-bottom: 46px;
+    }
+}
