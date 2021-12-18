@@ -1,4 +1,21 @@
 .cards__photo{
     max-width: 100%;
-    max-height: 282px;
+}
+
+@media screen and (max-width: 880px) {
+    .cards__photo{
+        height: 32.045vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cards__photo{
+        height: 47vw;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .cards__photo{
+        height: auto;
+    }
 }

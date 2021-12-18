@@ -19,3 +19,9 @@
         justify-content: space-around;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .cards__content{
+        padding: 20px 0 24px;
+    }
+}
