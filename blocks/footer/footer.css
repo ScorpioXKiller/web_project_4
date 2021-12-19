@@ -10,7 +10,7 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
     .footer{
         margin: 0 calc((100% - 282px) / 2);
     }   
