@@ -14,14 +14,9 @@
     }
 }
 
-@media screen and (max-width: 660px) {
-    .cards__content{
-        justify-content: space-around;
-    }
-}
-
 @media screen and (max-width: 425px) {
     .cards__content{
         padding: 20px 0 24px;
+        margin: 0 15px 0 21px;
     }
 }
