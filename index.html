@@ -9,8 +9,6 @@
 </head>
 <body>
     <div class="page">
-        <div class="page__overlay"></div>
-        
         <header class="header">
             <img class="header__logo" src="images/logo.svg" alt="Logo">
         </header>
@@ -97,17 +95,21 @@
             </section>
 
             <section class="popup">
-                <button class="button popup__close-button" type="button" title="Close"></button>
+                <div class="popup__page-overlay"></div>
+            
+                <div class="popup__container" name="editor">
+                    <div class="popup__content">
+                        <button class="button popup__close-button" type="button" title="Close"></button>
 
-                <form class="popup__container" name="editor">
-                    <h2 class="popup__title">Edit profile</h2>
+                        <h2 class="popup__title">Edit profile</h2>
 
-                    <input type="text" class="popup__item popup__item_el_user-name" name="user-name" placeholder="Name">
+                        <input type="text" class="popup__item popup__item_el_user-name" name="userName" placeholder="Name">
 
-                    <input type="text" class="popup__item popup__item_el_user-about" name="user-about" placeholder="About Me">
+                        <input type="text" class="popup__item popup__item_el_user-about" name="userAbout" placeholder="About Me">
 
-                    <button class="button popup__save-button" type="submit" title="Save">Save</button>
-                </form>
+                        <button class="button popup__save-button" type="submit" title="Save">Save</button>
+                    </div> 
+                </div>
             </section>
         </main>
 

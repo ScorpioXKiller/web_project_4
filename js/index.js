@@ -1,6 +1,6 @@
-let editFormBtn = document.getElementById('edit');
-let pageOverlay = document.querySelector('.page__overlay');
+let openFormBtn = document.getElementById('edit');
 let popup = document.querySelector('.popup');
+let saveFormBtn = popup.querySelector('.popup__save-button');
 let closeFormBtn = popup.querySelector('.popup__close-button');
 let profileName = document.querySelector('.profile__name');
 let profileAbout = document.querySelector('.profile__about');
@@ -8,19 +8,14 @@ let nameInput = popup.querySelector('.popup__item_el_user-name');
 let aboutInput = popup.querySelector('.popup__item_el_user-about');
 
 let openForm = () => {
-    popup.style.display = "block";
+    nameInput.value = profileName.textContent;
+    aboutInput.value = profileAbout.textContent;
+
+    popup.classList.toggle('popup_visible');
 }
 
 let closeForm = () => {
-    popup.style.display = "none";
-}
-
-let enablePageOverlay = () => {
-    pageOverlay.style.display = "block";
-}
-
-let disablePageOverlay = () => {
-    pageOverlay.style.display = "none";
+    popup.classList.toggle('popup_visible');
 }
 
 function handleProfileFormSubmit(evt){
@@ -28,18 +23,10 @@ function handleProfileFormSubmit(evt){
 
     profileName.textContent = nameInput.value;
     profileAbout.textContent = aboutInput.value;
+    
+    closeForm();
 }
 
-function tuggleForm(){
-    nameInput.value = profileName.textContent;
-    aboutInput.value = profileAbout.textContent;
-}
-
-editFormBtn.addEventListener('click', openForm);
-editFormBtn.addEventListener('click', enablePageOverlay);
-
+openFormBtn.addEventListener('click', openForm);
+saveFormBtn.addEventListener('click', handleProfileFormSubmit);
 closeFormBtn.addEventListener('click', closeForm);
-closeFormBtn.addEventListener('click', disablePageOverlay);
-
-tuggleForm();
-popup.addEventListener('submit', handleProfileFormSubmit);
