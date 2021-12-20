@@ -2,7 +2,6 @@ let editFormBtn = document.getElementById('edit');
 let pageOverlay = document.querySelector('.page__overlay');
 let popup = document.querySelector('.popup');
 let closeFormBtn = popup.querySelector('.popup__close-button');
-let saveFormBtn = popup.querySelector('.popup__save-button');
 let profileName = document.querySelector('.profile__name');
 let profileAbout = document.querySelector('.profile__about');
 let nameInput = popup.querySelector('.popup__item_el_user-name');
@@ -41,9 +40,6 @@ editFormBtn.addEventListener('click', enablePageOverlay);
 
 closeFormBtn.addEventListener('click', closeForm);
 closeFormBtn.addEventListener('click', disablePageOverlay);
-
-saveFormBtn.addEventListener('click', closeForm);
-saveFormBtn.addEventListener('click', disablePageOverlay);
 
 tuggleForm();
 popup.addEventListener('submit', handleProfileFormSubmit);
