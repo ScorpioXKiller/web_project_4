@@ -1,16 +1,23 @@
-# Project 4: Around The U.S.
+# Around The U.S.
+## web-project
 
-### Overview
+### Project description
+From Homeland to Homeland - is an one page interactive website where you can add, remove, or like photos.. Also you can edit your profile by writing some information about yourself. Web-page adopts to any screen size, so you can enjoy it wherever you are, using your favourite device, such as: laptop, tablet, phone, etc.
 
-* Figma
-* Images
+### Ptoject functionality
 
-**Figma**
+1. Interactive page
+2. Flexible design that adopts to any screen sizes.
+3. Smooth fonts and beauty content.
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
 
-**Images**
+### Techlologies and styles used
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+1. HTML
+2. CSS
+3. JavaScript
+3. BEM methodology
+4. Responsive-adaptive markup.
+5. VS Code IDE
 
-Have fun with JavaScript!
+* [Link to the project on GitHub Pages](https://scorpioxkiller.github.io/web_project_4/index.html)  
