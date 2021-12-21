@@ -13,3 +13,9 @@
         row-gap: 18px;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .profile__info-container{
+        row-gap: 36px;
+    }
+}
