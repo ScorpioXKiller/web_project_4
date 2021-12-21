@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-color: inherit;
     background-position: center;
+    cursor: pointer;
 }
 
 .button:hover{
