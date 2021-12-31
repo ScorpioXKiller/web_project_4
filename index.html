@@ -26,75 +26,15 @@
                         <p class="profile__about">Explorer</p>
                     </div>
 
-                    <button class="button profile__add-button" type="button" title="Add image" aria-label="add"></button>
+                    <button class="button profile__add-button" type="button" id="add" title="Add image" aria-label="add"></button>
                 </div>
             </section>
 
             <section class="user-photos">
-                <ul class="cards">
-                    <li class="cards__item">
-                        <img class="cards__photo" src="images/yellowstone-national-park.jpg" alt="Yellowstone National Park">
-                        
-                        <div class="cards__content">
-                            <h2 class="cards__name">Yellowstone National Park</h2>
-
-                            <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
-                        </div>
-                    </li>
-
-                    <li class="cards__item">
-                        <img class="cards__photo" src="images/golden-gate-bridge.jpg" alt="Golden Gate Bridge.jpg">
-                        
-                        <div class="cards__content">
-                            <h2 class="cards__name">Golden Gate Bridge</h2>
-
-                            <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
-                        </div>
-                    </li>
-
-                    <li class="cards__item">
-                        <img class="cards__photo" src="images/statue-of-liberty.jpg" alt="Statue Of Liberty">
-                        
-                        <div class="cards__content">
-                            <h2 class="cards__name">Statue Of Liberty</h2>
-
-                            <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
-                        </div>
-                    </li>
-                    
-                    <li class="cards__item">
-                        <img class="cards__photo" src="images/grand-canyon.jpg" alt="Grand Canyon">
-                        
-                        <div class="cards__content">
-                            <h2 class="cards__name">Grand Canyon</h2>
-
-                            <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
-                        </div>
-                    </li>
-
-                    <li class="cards__item">
-                        <img class="cards__photo" src="images/washington-monument.jpg" alt="Washington Monument">
-                        
-                        <div class="cards__content">
-                            <p class="cards__name">Washington Monument</p>
-
-                            <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
-                        </div>
-                    </li>
-
-                    <li class="cards__item">
-                        <img class="cards__photo" src="images/mount-rushmore.jpg" alt="Mount-Rushmore">
-                        
-                        <div class="cards__content">
-                            <h2 class="cards__name">Mount-Rushmore</h2>
-
-                            <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
-                        </div>
-                    </li>
-                </ul>
+                <ul class="cards"></ul>
             </section>
 
-            <section class="popup">
+            <section class="popup profile-popup popup_hidden">
                 <div class="popup__page-overlay"></div>
             
                 <div class="popup__container">
@@ -111,12 +51,57 @@
                     </form>
                 </div>
             </section>
+
+            <section class="popup card-creator-popup popup_hidden">
+                <div class="popup__page-overlay"></div>
+
+                <div class="popup__container">
+                    <button class="button popup__close-button" type="button" title="Close" aria-label="close"></button>
+
+                    <h2 class="popup__title">New place</h2>
+
+                    <form class="popup__form" name="creator">
+                        <input type="text" class="popup__item popup__item_el_card-title" name="cardTitle" placeholder="Title">
+
+                        <input type="text" class="popup__item popup__item_el_image-link" name="imageLink" placeholder="Image link">
+    
+                        <button class="button popup__save-button" type="submit" title="Create">Create</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="popup card-popup popup_hidden">
+                <div class="popup__page-overlay"></div>
+
+                <div class="card-popup__container">
+                    <button class="button popup__close-button card-popup__close-button" type="button" title="Close" aria-label="close"></button>
+
+                    <img class="card-popup__image" alt="Place">
+
+                    <p class="card-popup__name"></p>
+                </div>
+            </section>
         </main>
 
         <footer class="footer">
             <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
         </footer>
     </div>
+
+    <template id="userCard">
+        <li class="cards__item">
+            <img class="cards__photo" alt="Place">
+
+            <button class="button cards__delete-button" type="button" title="Delete" aria-label="delete"></button>
+            
+            <div class="cards__content">
+                <p class="cards__name"></p>
+
+                <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
+            </div>
+        </li>
+    </template>
+    
     <script src="js/index.js"></script>
 </body>
 </html>

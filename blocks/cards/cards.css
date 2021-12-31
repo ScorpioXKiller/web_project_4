@@ -1,5 +1,5 @@
 .cards{
-    max-width: 100%;
+    max-width: max-content;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -17,6 +17,7 @@
 
 @media screen and (max-width: 425px) {
     .cards{
+        min-width: 100%;
         grid-template-columns: auto;
     }
 }
