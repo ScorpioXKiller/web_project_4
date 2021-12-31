@@ -57,29 +57,28 @@ let addCardToBeggin = (name, link) => {
     cards.prepend(createCard(name, link));
 }
 
-let createCard = (cardName, cardLink) => {
+let createCard = (name, link) => {
     const cardTemplate = document.querySelector("#userCard").content;
     const cardElement = cardTemplate.querySelector(".cards__item").cloneNode(true);
     const cardImage = cardElement.querySelector(".cards__photo");
+    const cardName = cardElement.querySelector(".cards__name");
     const cardPopupImage = cardPopup.querySelector(".card-popup__image");
     const cardPopupName = cardPopup.querySelector(".card-popup__name");
 
-    cardImage.src = cardLink;
-    cardImage.alt = cardName;
-    cardElement.querySelector(".cards__name").textContent = cardName;
+    cardImage.src = link;
+    cardName.textContent = cardImage.alt = name;
 
     cardElement.querySelector(".cards__like-button").addEventListener("click", evt => {
         evt.target.classList.toggle("cards__like-button_active");
     });
 
     cardElement.querySelector(".cards__delete-button").addEventListener("click", evt => {
-        const cardName = evt.target.nextElementSibling.querySelector(".cards__name").textContent;
         evt.target.parentElement.remove();
     });
 
     cardImage.addEventListener("click", evt => {
         cardPopupImage.src = evt.target.src;
-        cardPopupName.textContent = evt.target.alt;
+        cardPopupImage.alt = cardPopupName.textContent = evt.target.alt;
         openPopup(cardPopup);
     })
 
