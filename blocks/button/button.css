@@ -1,4 +1,4 @@
-.button{
+.button {
     padding: 0;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -6,6 +6,6 @@
     cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
     opacity: 0.6;
 }

@@ -25,9 +25,7 @@
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__copyright/footer__copyright.css");
 @import url("../blocks/popup/popup.css");
-@import url("../blocks/popup/_hidden/popup_hidden.css");
 @import url("../blocks/popup/_visible/popup_visible.css");
-@import url("../blocks/popup/_animation/_fade/popup_animation_fade.css");
 @import url("../blocks/popup/__overlay/popup__page-overlay.css");
 @import url("../blocks/popup/__container/popup__container.css");
 @import url("../blocks/popup/__close-button/popup__close-button.css");

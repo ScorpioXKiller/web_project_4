@@ -1,4 +1,4 @@
-.popup__item{
+.popup__item {
     width: 100%;
     padding: 0 0 12px 0;
     margin-bottom: 30px;
@@ -8,7 +8,7 @@
     line-height: 1.2;
 }
 
-.popup__item:focus{
+.popup__item:focus {
     outline-color:rgb(99, 174, 235);
     outline-style: solid;
     outline-width: 3px;
@@ -16,12 +16,18 @@
     box-shadow: 0 0 5px 2px rgb(39, 140, 223);
 }
 
-.popup__item::placeholder{
+.popup__item::placeholder {
     opacity: 0.5;
 }
 
+.popup__item:invalid {
+    outline-width: 2px;
+    outline-color: red;
+    box-shadow: none;
+}
+
 @media screen and (max-width: 540px) {
-    .popup__item{
+    .popup__item {
         padding-bottom: 9px;
     }
 }

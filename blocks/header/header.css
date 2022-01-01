@@ -1,17 +1,17 @@
-.header{
+.header {
     max-width: 880px;
     margin: 0 auto;
     border-bottom: 1px solid rgb(84, 84, 84, 0.7);
 }
 
 @media screen and (max-width: 880px) {
-    .header{
+    .header {
         max-width: 90%;
     }
 }
 
 @media screen and (max-width: 425px){
-    .header{
+    .header {
         max-width: 100%;
     }
 }
