@@ -34,7 +34,7 @@
                 <ul class="cards"></ul>
             </section>
 
-            <section class="popup profile-popup popup_hidden">
+            <section class="popup profile-popup">
                 <div class="popup__page-overlay"></div>
             
                 <div class="popup__container">
@@ -43,16 +43,16 @@
                     <h2 class="popup__title">Edit profile</h2>
 
                     <form class="popup__form" name="editor">
-                        <input type="text" class="popup__item popup__item_el_user-name" name="userName" placeholder="Name">
+                        <input type="text" class="popup__item popup__item_el_user-name" name="userName" placeholder="Name" required>
 
-                        <input type="text" class="popup__item popup__item_el_user-about" name="userAbout" placeholder="About Me">
+                        <input type="text" class="popup__item popup__item_el_user-about" name="userAbout" placeholder="About Me" required>
     
                         <button class="button popup__save-button" type="submit" title="Save">Save</button>
                     </form>
                 </div>
             </section>
 
-            <section class="popup card-creator-popup popup_hidden">
+            <section class="popup card-creator-popup">
                 <div class="popup__page-overlay"></div>
 
                 <div class="popup__container">
@@ -61,16 +61,16 @@
                     <h2 class="popup__title">New place</h2>
 
                     <form class="popup__form" name="creator">
-                        <input type="text" class="popup__item popup__item_el_card-title" name="cardTitle" placeholder="Title">
+                        <input type="text" class="popup__item popup__item_el_card-title" name="cardTitle" placeholder="Title" required>
 
-                        <input type="text" class="popup__item popup__item_el_image-link" name="imageLink" placeholder="Image link">
+                        <input type="url" class="popup__item popup__item_el_image-link" name="imageLink" placeholder="Image link" required>
     
                         <button class="button popup__save-button" type="submit" title="Create">Create</button>
                     </form>
                 </div>
             </section>
 
-            <section class="popup card-popup popup_hidden">
+            <section class="popup card-popup">
                 <div class="popup__page-overlay"></div>
 
                 <div class="card-popup__container">
