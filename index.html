@@ -42,12 +42,18 @@
 
                     <h2 class="popup__title">Edit profile</h2>
 
-                    <form class="popup__form" name="editor">
-                        <input type="text" class="popup__item popup__item_el_user-name" name="userName" placeholder="Name" required>
+                    <form class="form" name="editor" novalidate>
+                        <label class="form__field">
+                            <input type="text" class="form__input form__input_el_user-name" id="name-input" name="userName" placeholder="Name" required minlength="2" maxlength="40">
+                            <span class="form__input-error name-input-error"></span>
+                        </label>
 
-                        <input type="text" class="popup__item popup__item_el_user-about" name="userAbout" placeholder="About Me" required>
-    
-                        <button class="button popup__save-button" type="submit" title="Save">Save</button>
+                        <label class="form__field">
+                            <input type="text" class="form__input form__input_el_user-about" id="about-input" name="userAbout" placeholder="About Me" required minlength="2" maxlength="200">
+                            <span class="form__input-error about-input-error"></span>
+                        </label>
+                        
+                        <button class="button form__submit-button" type="submit" title="Save">Save</button>
                     </form>
                 </div>
             </section>
@@ -60,12 +66,18 @@
 
                     <h2 class="popup__title">New place</h2>
 
-                    <form class="popup__form" name="creator">
-                        <input type="text" class="popup__item popup__item_el_card-title" name="cardTitle" placeholder="Title" required>
+                    <form class="form" name="creator" novalidate>
+                        <label class="form__field">
+                            <input type="text" class="form__input form__input_el_card-title" id="title-input" name="cardTitle" placeholder="Title" required minlength="1" maxlength="30">
+                            <span class="form__input-error title-input-error"></span>
+                        </label>
 
-                        <input type="url" class="popup__item popup__item_el_image-link" name="imageLink" placeholder="Image link" required>
-    
-                        <button class="button popup__save-button" type="submit" title="Create">Create</button>
+                        <label class="form__field">
+                            <input type="url" class="form__input form__input_el_image-link" id="link-input" name="imageLink" placeholder="Image link" required>
+                            <span class="form__input-error link-input-error"></span>
+                        </label>
+
+                        <button class="button form__submit-button" type="submit" title="Create">Create</button>
                     </form>
                 </div>
             </section>
@@ -102,6 +114,7 @@
         </li>
     </template>
     
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/validate.js"></script>
 </body>
 </html>
