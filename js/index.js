@@ -111,7 +111,7 @@ const handleRemoteClick = (evt) => {
     const outsideElement = document.querySelector(".popup__page-overlay");
     const popupElement = document.querySelector(".popup_visible");
 
-    if(evt.target.className == outsideElement.className) {
+    if(evt.target.isEqualNode(outsideElement)) {
         closePopup(popupElement);
     }
 }
@@ -145,6 +145,8 @@ const openProfilePopup = () => {
 
 const openCardCreatorPopup = () => {
     openPopup(cardCreatorPopup);
+
+    cardCreatorPopupForm.reset();
     
     resetVaidation(cardCreatorPopup, {
         inputSelector: ".form__input",
@@ -153,8 +155,6 @@ const openCardCreatorPopup = () => {
         submitButtonSelector: ".form__submit-button",
         inactiveButtonClass: "form__submit-button_disabled"
     });
-
-    cardCreatorPopupForm.reset();
 }
 
 const handleProfileFormSubmit = (evt) => {

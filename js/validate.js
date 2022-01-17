@@ -91,8 +91,9 @@ const resetVaidation = (formElement, configObject) => {
     inputList.forEach(inputElement => {
         inputElement.classList.remove(inputErrorClass);
         inputElement.nextElementSibling.classList.remove(errorClass);
-        toggleButtonState(inputList, button, configObject);
     });
+
+    toggleButtonState(inputList, button, configObject);
 }
 
 enableValidation({
