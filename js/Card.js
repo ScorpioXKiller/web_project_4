@@ -1,4 +1,4 @@
-import CardPreviewPopup from "./CardPreviewPopup.js";
+import CardPreviewPopup from "./Popups/CardPreviewPopup.js";
 
 class Card {
     constructor(data, cardTemplateSelector) {
@@ -6,6 +6,22 @@ class Card {
         this._name = name;
         this._link = link;
         this._cardTemplateSelector = cardTemplateSelector.content;
+    }
+
+    create() {
+        this._cardElement = this._cardTemplateSelector.querySelector(".cards__item").cloneNode(true);
+        const cardImage = this._cardElement.querySelector(".cards__photo");
+        const cardName = this._cardElement.querySelector(".cards__name");
+    
+        cardImage.src = this._link;
+        cardName.textContent = this._name;
+        cardImage.alt = `Photo of ${this._name}`;
+    
+        this._handleLikeButton();
+        this._handleDeleteButton();
+        this._handleClickOnCard(cardImage, cardName);
+    
+        return this._cardElement;
     }
 
     _handleLikeButton() {
@@ -33,22 +49,6 @@ class Card {
             const cardPreviewPopup = new CardPreviewPopup();
             cardPreviewPopup.openPopup();
         }); 
-    }
-
-    create() {
-        this._cardElement = this._cardTemplateSelector.querySelector(".cards__item").cloneNode(true);
-        const cardImage = this._cardElement.querySelector(".cards__photo");
-        const cardName = this._cardElement.querySelector(".cards__name");
-    
-        cardImage.src = this._link;
-        cardName.textContent = this._name;
-        cardImage.alt = `Photo of ${this._name}`;
-    
-        this._handleLikeButton();
-        this._handleDeleteButton();
-        this._handleClickOnCard(cardImage, cardName);
-    
-        return this._cardElement;
     }
 }
 
