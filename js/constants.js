@@ -19,7 +19,7 @@ export const cardPreviewPopupElements = {
 
 export const cardCreatorPopupElements = {
     cardCreatorPopup,
-    cardCreatorPopupForm: cardCreatorPopup.querySelector(".popup__form_card-creator"),
+    cardCreatorPopupForm: cardCreatorPopup.querySelector(".form"),
     cardTitleInput: cardCreatorPopup.querySelector(".form__input_el_card-title"),
     cardLinkInput: cardCreatorPopup.querySelector(".form__input_el_image-link"),
     openCardCreatorPopupButton: document.getElementById("add"),
@@ -28,7 +28,7 @@ export const cardCreatorPopupElements = {
 
 export const profileEditPopupElements = {
     profileEditPopup,
-    profileEditPopupForm: profileEditPopup.querySelector(".popup__form_edit-profile"),
+    profileEditPopupForm: profileEditPopup.querySelector(".form"),
     profileNameInput: profileEditPopup.querySelector('.form__input_el_user-name'),
     profileAboutInput: profileEditPopup.querySelector('.form__input_el_user-about'),
     openProfileEditPopupButton: document.getElementById('edit'),
