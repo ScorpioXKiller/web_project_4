@@ -1,12 +1,7 @@
-import { config } from "./config.js";
-
 class FormValidator {
-    constructor(formElement) {
+    constructor(config, formElement) {
         this._config = config;
         this._formElement = formElement;
-        this.enableValidation();
-        this.resetVaidation();
-        
     }
 
     _showInputError(inputElement) {
@@ -76,6 +71,7 @@ class FormValidator {
     enableValidation() {
         this._formElement.addEventListener("submit", evt => evt.preventDefault());
         this._setEventListeners();
+        this.resetVaidation();
     }
 
     resetVaidation() {
