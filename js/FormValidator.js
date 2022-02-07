@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { config } from "./config.js";
 
 class FormValidator {
@@ -23,6 +24,12 @@ class FormValidator {
 
     resetForm() {
         this._formElement.reset();
+=======
+class FormValidator {
+    constructor(config, formElement) {
+        this._config = config;
+        this._formElement = formElement;
+>>>>>>> refactoring2
     }
 
     _showInputError(inputElement) {
@@ -67,7 +74,11 @@ class FormValidator {
 
         this._buttonElement = this._formElement.querySelector(submitButtonSelector);
     
+<<<<<<< HEAD
         if (this._hasInvalidInput()) {
+=======
+        if(this._hasInvalidInput()) {
+>>>>>>> refactoring2
             this._buttonElement.classList.add(inactiveButtonClass);
             this._buttonElement.disabled = true;
         } else {
@@ -88,7 +99,31 @@ class FormValidator {
             });
         });
     }
+<<<<<<< HEAD
 }
 
 export default FormValidator;
 
+=======
+
+    enableValidation() {
+        this._formElement.addEventListener("submit", evt => evt.preventDefault());
+        this._setEventListeners();
+        this.resetVaidation();
+    }
+
+    resetVaidation() {
+        this._inputList.forEach(inputElement => {
+            this._hideInputError(inputElement);
+        });
+    
+        this._toggleButtonState();
+    }
+
+    resetForm() {
+        this._formElement.reset();
+    }
+}
+
+export default FormValidator;
+>>>>>>> refactoring2
