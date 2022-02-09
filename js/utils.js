@@ -8,10 +8,8 @@ const handleKeyDown = (evt) => {
 }
 
 const handleRemoteClick = (evt) => {
-    const outsideElement = document.querySelector(".popup__page-overlay");
-    const popupElement = document.querySelector(".popup_visible");
-
-    if(evt.target.isEqualNode(outsideElement)) {
+    if(evt.target.classList.contains("popup__page-overlay")) {
+        const popupElement = evt.target.closest('.popup');
         closePopup(popupElement);
     }
 }

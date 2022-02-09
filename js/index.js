@@ -62,10 +62,14 @@ const {
 
 } = profileEditPopupElements;
 
+const initCard = (data) => {
+    const card = new Card(data, cardTemplate);
+    return card;
+}
+
 const displayInitCards = () => {
     initialCards.forEach(data => {
-        const card = new Card(data, cardTemplate);
-        cardGrid.append(card.create());
+        cardGrid.append(initCard(data).create());
     });
 }
 
@@ -75,8 +79,7 @@ const displayNewCard = () => {
         link: cardLinkInput.value
     }
 
-    const card = new Card(data, cardTemplate);
-    cardGrid.prepend(card.create());
+    cardGrid.prepend(initCard(data).create());
 }
 
 const initProfilePopup = () => {
