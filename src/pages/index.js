@@ -1,7 +1,8 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import { profileInfoElements, cardPreviewPopupElements, cardCreatorPopupElements, profileEditPopupElements, cardTemplate, cardGrid } from "./constants.js";
-import { openPopup, closePopup, handleProfileFormSubmit, handleCardCreatorFormSubmit } from "./utils.js";
+import "./index.css";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import { profileInfoElements, cardPreviewPopupElements, cardCreatorPopupElements, profileEditPopupElements, cardTemplate, cardGrid } from "../utils/constants";
+import { openPopup, closePopup, handleProfileFormSubmit, handleCardCreatorFormSubmit } from "../utils/utils";
 
 const config = {
     inputSelector: ".form__input",
@@ -14,27 +15,27 @@ const config = {
 const initialCards = [
     {
         name: "Yellowstone National Park",
-        link: "images/yellowstone-national-park.jpg"
+        link: new URL("../images/yellowstone-national-park.jpg", import.meta.url)
     },
     {
         name: "Golden Gate Bridge",
-        link: "images/golden-gate-bridge.jpg"
+        link: new URL("../images/golden-gate-bridge.jpg", import.meta.url)
     },
     {
         name: "Statue Of Liberty",
-        link: "images/statue-of-liberty.jpg"
+        link: new URL("../images/statue-of-liberty.jpg", import.meta.url)
     },
     {
         name: "Grand Canyon",
-        link: "images/grand-canyon.jpg"
+        link: new URL("../images/grand-canyon.jpg", import.meta.url)
     },
     {
         name: "Washington Monument",
-        link: "images/washington-monument.jpg"
+        link: new URL("../images/washington-monument.jpg", import.meta.url)
     },
     {
         name: "Mount-Rushmore",
-        link: "images/mount-rushmore.jpg"
+        link: new URL("../images/mount-rushmore.jpg", import.meta.url)
     }
 ];
 

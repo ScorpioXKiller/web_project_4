@@ -1,5 +1,5 @@
-import { openPopup } from "./utils.js";
-import { cardPreviewPopupElements } from "./constants.js";
+import { openPopup } from "../utils/utils.js";
+import { cardPreviewPopupElements } from "../utils/constants.js";
 
 class Card {
     constructor(data, cardTemplateSelector) {
