@@ -43,7 +43,6 @@ export const profileInfoElements = {
 }
 
 export const cardGrid = document.querySelector(".cards");
-export const cardTemplate = document.querySelector("#userCard");
 
 export const cardPreviewPopupElements = {
     cardPreviewPopup,

@@ -7,8 +7,7 @@ import {
     cardPreviewPopupElements, 
     cardCreatorPopupElements, 
     profileEditPopupElements,
-    initialCards, 
-    cardTemplate, 
+    initialCards,
     cardGrid,
     config
 } from "../utils/constants";
@@ -51,14 +50,13 @@ const userInfo = new UserInfo({
 
 const popupImagePreview = new PopupWithImage(cardPreviewPopup);
 
-const getInitCard = (data) => {
+const createCard = (data) => {
     const card = new Card({
         data, 
         handleCardClick: () => {
             popupImagePreview.open(data);
-            popupImagePreview.setEventListeners();
         }
-    }, cardTemplate);
+    }, "#userCard");
     
     const cardElement = card.create();
     return cardElement;
@@ -67,7 +65,7 @@ const getInitCard = (data) => {
 const cardCreatorPopup = new PopupWithForm({
     popupElement: cardCreatorPopupElement,
     handleFormSubmit: (data) => {
-        cardList.addItemToBegin(getInitCard(data));
+        cardList.addItemToBegin(createCard(data));
     }
 });
 
@@ -81,7 +79,7 @@ const profileEditPopup = new PopupWithForm({
 const cardList = new Section({
     items: initialCards, 
     renderer: (data) => {
-        cardList.addItemToEnd(getInitCard(data));
+        cardList.addItemToEnd(createCard(data));
     }
 }, cardGrid);
 

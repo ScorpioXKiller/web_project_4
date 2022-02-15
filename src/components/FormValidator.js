@@ -8,7 +8,7 @@ class FormValidator {
         const {
             inputErrorClass,
             errorClass
-        } = this._config || {}; 
+        } = this._config; 
 
         const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.add(inputErrorClass);
@@ -20,7 +20,7 @@ class FormValidator {
         const {
             inputErrorClass,
             errorClass
-        } = this._config || {};
+        } = this._config;
 
         const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.remove(inputErrorClass);
@@ -39,7 +39,7 @@ class FormValidator {
     _hasInvalidInput = () => this._inputList.some(inputElement => !inputElement.validity.valid);
 
     _toggleButtonState(buttonElement) {
-        const { inactiveButtonClass } = this._config || {};
+        const { inactiveButtonClass } = this._config;
     
         if(this._hasInvalidInput()) {
             buttonElement.classList.add(inactiveButtonClass);
@@ -51,7 +51,7 @@ class FormValidator {
     }
 
     _setEventListeners() {
-        const { inputSelector, submitButtonSelector } = this._config || {};
+        const { inputSelector, submitButtonSelector } = this._config;
     
         this._inputList = Array.from(this._formElement.querySelectorAll(inputSelector));
         this._buttonElement = this._formElement.querySelector(submitButtonSelector);

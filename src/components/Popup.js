@@ -5,6 +5,7 @@ class Popup {
 
     open() {
         this._popupElement.classList.add("popup_visible");
+        this._addEventListeners();
     }
     
     close() {
@@ -12,7 +13,7 @@ class Popup {
         this._removeEventListeners();
     }
 
-    setEventListeners() {
+    _addEventListeners = () => {
         document.addEventListener("keydown", this._handleEscClose);
         this._popupElement.addEventListener("click", this._handleRemoteClick);
         this._popupElement.querySelector(".popup__close-button").addEventListener("click", this._handleCloseButton);
