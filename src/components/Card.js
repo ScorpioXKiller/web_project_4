@@ -2,10 +2,11 @@ import { openPopup } from "../utils/utils.js";
 import { cardPreviewPopupElements } from "../utils/constants.js";
 
 class Card {
-    constructor(data, cardTemplateSelector) {
-        const { name, link } = data;
-        this._name = name;
-        this._link = link;
+    constructor({data, handleCardClick}, cardTemplateSelector) {
+        const { cardTitle, cardLink } = data;
+        this._name = cardTitle;
+        this._link = cardLink;
+        this._handleCardClick = handleCardClick;
         this._cardTemplateSelector = cardTemplateSelector.content;
     }
 
@@ -21,22 +22,10 @@ class Card {
         }); 
     }
 
-    _handleClickOnCard(card) {
-        const { image, name } = card;
-        const { cardPreviewPopup, cardPreviewPopupName, cardPreviewPopupImage } = cardPreviewPopupElements;
-
-        image.addEventListener("click", () => { 
-            cardPreviewPopupImage.src = image.src; 
-            cardPreviewPopupName.textContent = name.textContent; 
-            cardPreviewPopupImage.alt = image.alt;
-            openPopup(cardPreviewPopup);
-        }); 
-    }
-
-    _setEventListeners(card) {
+    _setEventListeners(cardImage) {
         this._handleLikeButton();
         this._handleDeleteButton();
-        this._handleClickOnCard(card);
+        cardImage.addEventListener("click", () => this._handleCardClick());
     }
 
     create() {
@@ -51,7 +40,7 @@ class Card {
         card.name.textContent = this._name;
         card.image.alt = `Photo of ${this._name}`;
 
-        this._setEventListeners(card);
+        this._setEventListeners(card.image);
     
         return this._cardElement;
     }
