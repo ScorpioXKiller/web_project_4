@@ -1,6 +1,3 @@
-import { openPopup } from "../utils/utils.js";
-import { cardPreviewPopupElements } from "../utils/constants.js";
-
 class Card {
     constructor({data, handleCardClick}, cardTemplateSelector) {
         const { cardTitle, cardLink } = data;
