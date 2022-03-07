@@ -1,8 +1,9 @@
 class UserInfo {
     constructor(data) {
-        const { userNameElement, userAboutElement } = data;
+        const { userNameElement, userAboutElement, userAvatarElement } = data;
         this._userName = userNameElement;
         this._userAbout = userAboutElement;
+        this._userAvatar = userAvatarElement;
     }
 
     getUserInfo = () => {
@@ -13,10 +14,15 @@ class UserInfo {
     }
 
     setUserInfo = (data) => {
-        const { userName, userAbout } = data;
+        const { name, about, id } = data;
 
-        this._userName.textContent = userName;
-        this._userAbout.textContent = userAbout;
+        this._userName.textContent = name;
+        this._userAbout.textContent = about;
+        this._userId = id;
+    }
+
+    setUserAvatar = (url) => {
+        this._userAvatar.style.backgroundImage = `url("${url}")`;
     }
 }
 

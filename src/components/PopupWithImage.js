@@ -3,12 +3,12 @@ import { cardPreviewPopupElements } from "../utils/constants";
 
 class PopupWithImage extends Popup {
     open = (data) => {
-        const { cardTitle, cardLink } = data;
+        const { name, link } = data;
         const { cardPreviewPopupTitle, cardPreviewPopupImage } = cardPreviewPopupElements;
 
-        cardPreviewPopupTitle.textContent = cardTitle;
-        cardPreviewPopupImage.src = cardLink;
-        cardPreviewPopupImage.alt = `Photo of ${cardTitle}`;
+        cardPreviewPopupTitle.textContent = name;
+        cardPreviewPopupImage.src = link;
+        cardPreviewPopupImage.alt = `Photo of ${link}`;
         
         super.open();
     }

@@ -1,31 +1,5 @@
-export const initialCards = [
-    {
-        cardTitle: "Yellowstone National Park",
-        cardLink: new URL("../images/yellowstone-national-park.jpg", import.meta.url)
-    },
-    {
-        cardTitle: "Golden Gate Bridge",
-        cardLink: new URL("../images/golden-gate-bridge.jpg", import.meta.url)
-    },
-    {
-        cardTitle: "Statue Of Liberty",
-        cardLink: new URL("../images/statue-of-liberty.jpg", import.meta.url)
-    },
-    {
-        cardTitle: "Grand Canyon",
-        cardLink: new URL("../images/grand-canyon.jpg", import.meta.url)
-    },
-    {
-        cardTitle: "Washington Monument",
-        cardLink: new URL("../images/washington-monument.jpg", import.meta.url)
-    },
-    {
-        cardTitle: "Mount-Rushmore",
-        cardLink: new URL("../images/mount-rushmore.jpg", import.meta.url)
-    }
-];
-
 export const config = {
+    formSelector: ".form",
     inputSelector: ".form__input",
     submitButtonSelector: ".form__submit-button",
     inactiveButtonClass: "form__submit-button_disabled",
@@ -36,11 +10,16 @@ export const config = {
 const cardPreviewPopup = document.querySelector(".card-popup");
 const cardCreatorPopupElement = document.querySelector(".card-creator-popup");
 const profileEditPopupElement = document.querySelector('.profile-popup');
+const profileAvatarEditPopupElement = document.querySelector(".profile-avatar-popup");
+const popupConfirmElement = document.querySelector(".confirm-popup");
 
 export const profileInfoElements = {
     profileName: document.querySelector('.profile__name'),
-    profileAbout: document.querySelector('.profile__about')
+    profileAbout: document.querySelector('.profile__about'),
+    profileAvatar: document.querySelector(".profile__avatar")
 }
+
+export const profileAvatarEditButton = document.querySelector(".profile__avatar-edit-button");
 
 export const cardGrid = document.querySelector(".cards");
 
@@ -51,20 +30,26 @@ export const cardPreviewPopupElements = {
     closeCardPreviewPopupButton: cardPreviewPopup.querySelector(".card-popup__close-button")
 }
 
+export const confirmPopupElements = {
+    popupConfirmElement,
+}
+
 export const cardCreatorPopupElements = {
     cardCreatorPopupElement,
-    cardCreatorPopupForm: cardCreatorPopupElement.querySelector(".form"),
-    cardTitleInput: cardCreatorPopupElement.querySelector(".form__input_el_card-title"),
-    cardLinkInput: cardCreatorPopupElement.querySelector(".form__input_el_image-link"),
     openCardCreatorPopupButton: document.getElementById("add"),
-    closeCardCreatorPopupButton: cardCreatorPopupElement.querySelector(".popup__close-button")
 }
 
 export const profileEditPopupElements = {
     profileEditPopupElement,
-    profileEditPopupForm: profileEditPopupElement.querySelector(".form"),
     profileNameInput: profileEditPopupElement.querySelector('.form__input_el_user-name'),
     profileAboutInput: profileEditPopupElement.querySelector('.form__input_el_user-about'),
-    openProfileEditPopupButton: document.getElementById('edit'),
-    closeProfileEditPopupButton: profileEditPopupElement.querySelector('.popup__close-button')
+    openProfileEditPopupButton: document.getElementById('info-edit'),
 }
+
+export const profileAvatarEditPopupElements = {
+    profileAvatarEditPopupElement,
+    profileAvatarLinkInput: profileAvatarEditPopupElement.querySelector(".form__input_el_avatar-link"),
+    openProfileAvatarEditPopupButton: document.getElementById("avatar-edit")
+}
+
+export const formValidators = {}
