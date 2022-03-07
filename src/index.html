@@ -14,15 +14,20 @@
 
         <main class="content">
             <section class="profile">
-                <img class="profile__avatar-image" src="<%=require('./images/avatar.jpg')%>" alt="Avatar">
+                <div class="profile__avatar">
+                    <div class="profile__avatar-overlay">
+                        <img id="avatar-edit" class="profile__avatar-edit-button" src="<%=require('./images/ui/avatar-edit-button.svg')%>" alt="Edit button">
+                    </div>
+                </div>
+                
 
                 <div class="profile__info-container">
                     <div class="profile__info">
-                        <h1 class="profile__name">Jacques Cousteau</h1>
+                        <h1 class="profile__name"></h1>
     
-                        <button class="button profile__edit-button" type="button" id="edit" title="Edit profile" aria-label="edit"></button>
+                        <button class="button profile__edit-button" type="button" id="info-edit" title="Edit profile" aria-label="edit"></button>
     
-                        <p class="profile__about">Explorer</p>
+                        <p class="profile__about"></p>
                     </div>
 
                     <button class="button profile__add-button" type="button" id="add" title="Add image" aria-label="add"></button>
@@ -41,15 +46,34 @@
 
                     <h2 class="popup__title">Edit profile</h2>
 
-                    <form class="form" name="editor" novalidate>
+                    <form class="form" name="profileEditForm" novalidate>
                         <label class="form__field">
-                            <input type="text" class="form__input form__input_el_user-name" id="name-input" name="userName" placeholder="Name" required minlength="2" maxlength="40">
+                            <input type="text" class="form__input form__input_el_user-name" id="name-input" name="name" placeholder="Name" required minlength="2" maxlength="40">
                             <span class="form__input-error name-input-error"></span>
                         </label>
 
                         <label class="form__field">
-                            <input type="text" class="form__input form__input_el_user-about" id="about-input" name="userAbout" placeholder="About Me" required minlength="2" maxlength="200">
+                            <input type="text" class="form__input form__input_el_user-about" id="about-input" name="about" placeholder="About Me" required minlength="2" maxlength="200">
                             <span class="form__input-error about-input-error"></span>
+                        </label>
+                        
+                        <button class="button form__submit-button" type="submit" title="Save">Save</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="popup profile-avatar-popup">
+                <div class="popup__page-overlay"></div>
+
+                <div class="popup__container">
+                    <button class="button popup__close-button" type="button" title="Close" aria-label="close"></button>
+
+                    <h2 class="popup__title">Change profile picture</h2>
+
+                    <form class="form" name="profileAvatarEditForm" novalidate>
+                        <label class="form__field">
+                            <input type="url" class="form__input form__input_el_avatar-link" id="link-input" name="link" placeholder="Image link" required>
+                            <span class="form__input-error link-input-error"></span>
                         </label>
                         
                         <button class="button form__submit-button" type="submit" title="Save">Save</button>
@@ -65,14 +89,14 @@
 
                     <h2 class="popup__title">New place</h2>
 
-                    <form class="form" name="creator" novalidate>
+                    <form class="form" name="cardCreatorForm" novalidate>
                         <label class="form__field">
-                            <input type="text" class="form__input form__input_el_card-title" id="title-input" name="cardTitle" placeholder="Title" required minlength="1" maxlength="30">
+                            <input type="text" class="form__input form__input_el_card-title" id="title-input" name="name" placeholder="Title" required minlength="1" maxlength="30">
                             <span class="form__input-error title-input-error"></span>
                         </label>
 
                         <label class="form__field">
-                            <input type="url" class="form__input form__input_el_image-link" id="link-input" name="cardLink" placeholder="Image link" required>
+                            <input type="url" class="form__input form__input_el_image-link" id="link-input" name="link" placeholder="Image link" required>
                             <span class="form__input-error link-input-error"></span>
                         </label>
 
@@ -92,6 +116,18 @@
                     <h2 class="card-popup__name"></h2>
                 </div>
             </section>
+
+            <section class="popup confirm-popup">
+                <div class="popup__page-overlay"></div>
+
+                <div class="popup__container">
+                    <button class="button popup__close-button" type="button" title="Close" aria-label="close"></button>
+                    <h2 class="popup__title confirm-popup-title">Are you sure?</h2>
+                    <form class="form", novalidate>
+                        <button class="button form__submit-button" type="submit" title="Confirm">Yes</button>
+                    </form>
+                </div>
+            </section>
         </main>
 
         <footer class="footer">
@@ -107,8 +143,11 @@
             
             <div class="cards__content">
                 <p class="cards__name"></p>
-
-                <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
+                
+                <div class="cards__like">
+                    <button class="button cards__like-button" type="button" title="Like" aria-label="like"></button>
+                    <span class="cards__likes-amount"></span>
+                </div>
             </div>
         </li>
     </template>
