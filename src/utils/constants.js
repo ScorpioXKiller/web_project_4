@@ -52,7 +52,7 @@ export const profileAvatarEditPopupElements = {
     openProfileAvatarEditPopupButton: document.getElementById("avatar-edit")
 }
 
-export const FormElements = {
+export const formElements = {
     profileEditForm: profileEditPopupElement.querySelector(".form"),
     profileAvatarEditForm: profileAvatarEditPopupElement.querySelector(".form"),
     cardCreatorForm: cardCreatorPopupElement.querySelector(".form")

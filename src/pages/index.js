@@ -12,7 +12,7 @@ import {
     confirmPopupElements,
     formValidators,
     profileAvatarEditPopupElements,
-    FormElements
+    formElements
 } from "../utils/constants";
 
 
@@ -53,7 +53,7 @@ const {
     profileAvatarEditForm,
     cardCreatorForm
 
-} = FormElements;
+} = formElements;
 
 const cardList = new Section({
     renderer: (item) => {
