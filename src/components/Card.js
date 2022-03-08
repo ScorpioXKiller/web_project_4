@@ -1,10 +1,12 @@
 class Card {
-    constructor({data, handleCardClick, handleDeleteCard, handleLikeCard}, cardTemplateSelector, userId) {
-        const { name, link, likes = [], owner = {} } = data;
+    constructor({data, isOwner, id, ownerId, handleCardClick, handleDeleteCard, handleLikeCard}, cardTemplateSelector, userId) {
+        const { name, link, likes = [] } = data;
         this._name = name;
         this._link = link;
         this._likes = likes;
-        this._ownerId = owner._id;
+        this._isOwner = isOwner;
+        this._id = id;
+        this.ownerId = ownerId;
 
         this._handleCardClick = handleCardClick;
         this._handleDeleteCard = handleDeleteCard;
@@ -15,10 +17,6 @@ class Card {
         this._deleteButton = this._cardElement.querySelector(".cards__delete-button");
         this._likeButton = this._cardElement.querySelector(".cards__like-button");
         this._likesAmount = this._cardElement.querySelector(".cards__likes-amount");
-
-        if(this._ownerId == undefined) {
-            this._ownerId = userId;
-        }
     }
 
     create() {
@@ -33,16 +31,11 @@ class Card {
 
         this._setEventListeners(card.image);
 
-        if(this._ownerId !== this._userId) {
+        if(!this._isOwner) {
             this._deleteButton.classList.add("card__delete-button_hidden");
         }
 
-        this._likesAmount.textContent = this._likes.length;
-
-        if(this.isLiked()) {
-            this.updateLikes(this._likes);
-            this._likeButton.title = "Dislike";
-        }
+        this._renderLikes();
     
         return this._cardElement;
     }
@@ -56,8 +49,19 @@ class Card {
 
     updateLikes = (likes) => {
         this._likes = likes;
+        this._renderLikes();
+    }
+
+    _renderLikes = () => {
         this._likesAmount.textContent = this._likes.length;
-        this._likeButton.classList.toggle("cards__like-button_active");
+
+        if(this.isLiked()) {
+            this._likeButton.classList.add("cards__like-button_active");
+            this._likeButton.title = "Dislike";
+        } else {
+            this._likeButton.classList.remove("cards__like-button_active");
+            this._likeButton.title = "Like";
+        }
     }
 
     _setEventListeners = () => {

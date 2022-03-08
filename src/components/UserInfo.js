@@ -13,6 +13,8 @@ class UserInfo {
         }
     }
 
+    getUserId = () => this._userId;
+
     setUserInfo = (data) => {
         const { name, about, id } = data;
 

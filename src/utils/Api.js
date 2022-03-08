@@ -4,7 +4,7 @@ class Api {
         this._headers = headers;
     }
 
-    initAllPromise = () => Promise.all([this.getInitialCards(), this.getUserInfo()])
+    getInitialData = () => Promise.all([this.getInitialCards(), this.getUserInfo()])
 
     getUserInfo() {
         return this._defaultFetch(`${this._baseUrl}/users/me`, {
@@ -73,7 +73,6 @@ class Api {
                 }
                 return Promise.reject(res.status);
             })
-            .catch(err => console.log(`Error: ${err}`));
 }
 
 export default Api;

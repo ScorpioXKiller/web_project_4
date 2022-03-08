@@ -18,6 +18,16 @@ class PopupWithForm extends Popup {
         this.removeSubmitButtonListener();
     }
 
+    showLoadingButtonText() {
+        this._submitButton.textContent = "Saving...";
+    }
+
+    resetButtonText(buttonText) {
+        setTimeout(() => {
+            this._submitButton.textContent = buttonText;
+        }, 1000);
+    }
+
     addSubmitButtonListener = () => {
         this._formElement.addEventListener("submit", this._handlePopupFormSubmit);
     }
@@ -28,7 +38,7 @@ class PopupWithForm extends Popup {
 
     _handlePopupFormSubmit = (evt) => {
         evt.preventDefault();
-        this._submitButton.textContent = "Saving...";
+        this.showLoadingButtonText();
         this._handleFormSubmit(this._getInputValues(), this._submitButton);
     }
     

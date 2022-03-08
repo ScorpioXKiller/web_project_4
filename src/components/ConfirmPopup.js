@@ -1,8 +1,8 @@
 import Popup from "./Popup";
 
 class ConfirmPopup extends Popup {
-    setAction = (action) => {
-        this._submitButtonHandler = action;
+    handleSubmit = (handler) => {
+        this._submitButtonHandler = handler;
     }
     open = () => {
         super.open();
