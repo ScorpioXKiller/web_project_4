@@ -38,7 +38,6 @@ class PopupWithForm extends Popup {
 
     _handlePopupFormSubmit = (evt) => {
         evt.preventDefault();
-        this.showLoadingButtonText();
         this._handleFormSubmit(this._getInputValues(), this._submitButton);
     }
     

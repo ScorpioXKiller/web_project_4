@@ -77,9 +77,8 @@ api.getInitialData()
     userInfo.setUserInfo({name: user.name, about: user.about, id: user._id});
     userInfo.setUserAvatar(user.avatar);
     cardList.renderItems(cards);
-    console.log(cards);
 })
-.catch(err => console.log(`Error: ${err}`));
+.catch(err => console.log(`Error while initializing data: ${err}`));
 
 const enableValidation = () =>  {
     const formList = [...document.querySelectorAll(config.formSelector)];
@@ -147,6 +146,8 @@ const createCard = (data, isOwner, id, ownerId) => {
 const cardCreatorPopup = new PopupWithForm({
     popupElement: cardCreatorPopupElement,
     handleFormSubmit: (data) => {
+        cardCreatorPopup.showLoadingButtonText();
+
         api.uploadCard(data)
             .then(res => {
                 cardList.addItemToBegin(createCard(data, true, res._id));
@@ -154,7 +155,7 @@ const cardCreatorPopup = new PopupWithForm({
             })
             .catch(err => console.log(`Error with a creating card: ${err}`))
             .finally(() => {
-                profileEditPopup.resetButtonText("Create");
+                cardCreatorPopup.resetButtonText("Create");
             });
     }
 });
@@ -162,6 +163,8 @@ const cardCreatorPopup = new PopupWithForm({
 const profileEditPopup = new PopupWithForm({
     popupElement: profileEditPopupElement,
     handleFormSubmit: (data) => {
+        profileEditPopup.showLoadingButtonText();
+
         api.uploadUserInfo(data)
             .then(() => {
                 userInfo.setUserInfo(data);
@@ -177,6 +180,8 @@ const profileEditPopup = new PopupWithForm({
 const profileAvatarEditPopup = new PopupWithForm({
     popupElement: profileAvatarEditPopupElement,
     handleFormSubmit: (data) => {
+        profileAvatarEditPopup.showLoadingButtonText();
+
         api.uploadProfileAvatar(data.link)
             .then(() => {
                 userInfo.setUserAvatar(data.link);
